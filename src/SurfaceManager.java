@@ -50,7 +50,7 @@ public class SurfaceManager extends JDialog {
 		gbc_verticalStrut.gridy = 0;
 		getContentPane().add(verticalStrut, gbc_verticalStrut);
 
-		// Creates text input field for entering the height of the surface
+		// Creates text input field for entering the height of the surface.
 		heightTextField = new JTextField();
 		heightTextField.setText("Height");
 		heightTextField.addActionListener(new heightTextFieldListener());
