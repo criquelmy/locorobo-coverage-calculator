@@ -12,4 +12,5 @@ public class CoverageCalculator {
 		ProjectManager frame = new ProjectManager();
 		frame.setVisible(true);
 	}
+	
 }

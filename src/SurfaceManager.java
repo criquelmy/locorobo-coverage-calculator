@@ -20,7 +20,7 @@ public class SurfaceManager extends JDialog {
 	private JCheckBox trimCheckBox;
 	private JCheckBox floorCheckBox;
 	private JCheckBox paintCheckBox;
-
+	private int length = 0; 
 	private ActionListener listener;
 
 	public SurfaceManager() {
@@ -125,7 +125,14 @@ public class SurfaceManager extends JDialog {
 		getContentPane().add(floorCheckBox, gbc_floorCheckBox);
 
 	}
-
+	
+	//Creates a Surface from the Surface Class
+	public void addTrim(int length) {
+		this.length = length; 
+		Surface surface = new Surface(1 , length);
+		System.out.println(Surface.gettrimArea()); 
+		
+	}
 	// Listener for the height text box
 	private class heightTextFieldListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
@@ -150,17 +157,23 @@ public class SurfaceManager extends JDialog {
 	// Listener for the "Save Surface" button
 	private class SaveSurfaceListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-
-			if (trimCheckBox.isSelected())
-				System.out.println("Hey you checked TRIM");
-
-			if (paintCheckBox.isSelected())
-				System.out.println("Hey you checked PAINT");
-
-			if (floorCheckBox.isSelected())
+			
+			if (trimCheckBox.isSelected() == true) {
+				
+				addTrim(length); 
+			}
+			else if (paintCheckBox.isSelected()) 
 				System.out.println("Hey you checked Tile");
+				
+			else if (floorCheckBox.isSelected()){
+				
+			}
+				
+			}
+					 
+			 
 
 		}
 	}
 
-}
+
